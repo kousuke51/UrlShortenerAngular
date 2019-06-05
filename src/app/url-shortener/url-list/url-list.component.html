@@ -1,0 +1,15 @@
+<table class="table table-hover">
+  <tr>
+    <th>Long URL</th>
+    <th>Short URL</th>
+    <th>Expiration Date</th>
+  </tr>
+  <tr *ngFor="let url of service.list">
+    <td (click)="populateForm(pd)">{{url.LongUrl}}</td>
+    <td (click)="populateForm(pd)">{{url.ShortUrl}}</td>
+    <td (click)="populateForm(pd)">{{url.ExpirationDate | date: 'MM/dd/yyyy'}}</td>
+    <td>
+      <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(url.UrlInfoId)"></i>
+    </td>
+  </tr>
+</table>
